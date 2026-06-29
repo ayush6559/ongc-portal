@@ -1,0 +1,31 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- ONGC Red Background -->
+  <rect width="512" height="512" fill="#C00A0A"/>
+  
+  <!-- ONGC Symbol - White Oil Rig/Drill Tower -->
+  <g fill="white">
+    <!-- Left Tower -->
+    <rect x="156" y="80" width="20" height="280"/>
+    <!-- Right Tower -->
+    <rect x="336" y="80" width="20" height="280"/>
+    <!-- Top Beam -->
+    <rect x="156" y="80" width="200" height="20"/>
+    <!-- Diagonal Beams -->
+    <polygon points="176,100 336,100 316,150 196,150"/>
+    <polygon points="176,150 336,150 316,200 196,200"/>
+    <!-- Central Spire -->
+    <polygon points="256,80 236,180 276,180"/>
+    <!-- Base -->
+    <rect x="120" y="360" width="272" height="20" rx="10"/>
+    <!-- Support Legs -->
+    <rect x="100" y="380" width="40" height="40" rx="8"/>
+    <rect x="236" y="380" width="40" height="40" rx="8"/>
+    <rect x="372" y="380" width="40" height="40" rx="8"/>
+    <!-- Drill Head Stylization -->
+    <ellipse cx="256" cy="300" rx="60" ry="30" fill="none" stroke="white" stroke-width="6"/>
+    <ellipse cx="256" cy="300" rx="30" ry="15" fill="white"/>
+  </g>
+  
+  <!-- ONGC Text -->
+  <text x="256" y="460" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle">ONGC</text>
+</svg>
