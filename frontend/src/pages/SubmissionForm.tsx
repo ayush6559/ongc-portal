@@ -249,7 +249,7 @@ export default function SubmissionForm() {
                             Custom Fields
                           </h4>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {customColumns.map((col, index) => (
+                            {customColumns.map((col) => (
                               <div key={col}>
                                 <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3">
                                   {formatColumnName(col)}

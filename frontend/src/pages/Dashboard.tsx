@@ -4,10 +4,9 @@ import ChartWrapper from '../components/ChartWrapper'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts'
+import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts'
 import { 
   TrendingUp, 
-  TrendingDown, 
   Users, 
   Calendar, 
   Bell, 
@@ -17,7 +16,6 @@ import {
   CheckCircle2, 
   AlertTriangle,
   Brain,
-  ChevronRight,
   ArrowUpRight,
   ArrowDownRight
 } from 'lucide-react'
@@ -33,17 +31,9 @@ const performanceData = [
   { name: 'Jun', value: 7500 },
 ]
 
-const trainingData = [
-  { name: 'Week 1', sessions: 12, attendees: 150 },
-  { name: 'Week 2', sessions: 18, attendees: 220 },
-  { name: 'Week 3', sessions: 15, attendees: 180 },
-  { name: 'Week 4', sessions: 22, attendees: 280 },
-]
-
 export default function Dashboard() {
   const { theme } = useAppStore()
   const [liveUsers, setLiveUsers] = useState(247)
-  const [activeAlerts, setActiveAlerts] = useState(3)
 
   useEffect(() => {
     // Simulate live data updates
@@ -61,7 +51,7 @@ export default function Dashboard() {
       transition: {
         delay: i * 0.1,
         duration: 0.6,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     })
   }

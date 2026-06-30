@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useAppStore } from '../store'
-import { Lock, User, ArrowRight, Shield, Brain, Zap, ChevronRight } from 'lucide-react'
+import { Lock, User, ArrowRight, Shield, Brain, Zap } from 'lucide-react'
 
 export default function Login() {
   const [email, setEmail] = useState('')

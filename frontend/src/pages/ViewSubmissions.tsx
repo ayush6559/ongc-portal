@@ -18,14 +18,9 @@ import {
   X,
   ChevronDown,
   ChevronUp,
-  Filter,
   Download,
-  MoreHorizontal,
-  Trash2,
-  CheckCircle2,
   ChevronLeft,
   ChevronRight,
-  Settings,
 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import * as XLSX from 'xlsx'
@@ -133,16 +128,7 @@ export default function ViewSubmissions() {
     localStorage.setItem('tableColumns', JSON.stringify(columns))
   }, [columns])
 
-  // Load submissions function
-  const loadSubmissions = () => {
-    let savedSubmissions = localStorage.getItem('submissions')
-    let parsedSubmissions = savedSubmissions ? JSON.parse(savedSubmissions) : []
-    if (parsedSubmissions.length === 0) {
-      parsedSubmissions = initialSubmissions
-      localStorage.setItem('submissions', JSON.stringify(parsedSubmissions))
-    }
-    setSubmissions(parsedSubmissions)
-  }
+
 
   // Toggle submission done status
   const toggleSubmissionDone = (id: string) => {
@@ -200,7 +186,7 @@ export default function ViewSubmissions() {
         </div>
       ),
       cell: ({ row, getValue }) => {
-        const value = getValue()
+        const value = getValue() as any
         if (col === 'method') {
           return (
             <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
@@ -210,7 +196,7 @@ export default function ViewSubmissions() {
                 ? 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300'
                 : 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300'
             }`}>
-              {value || '-'}
+              {value && typeof value === 'string' ? value : '-'}
             </span>
           )
         }
@@ -224,7 +210,7 @@ export default function ViewSubmissions() {
             />
           )
         }
-        return <span className="text-sm text-gray-700 dark:text-gray-200">{value || '-'}</span>
+        return <span className="text-sm text-gray-700 dark:text-gray-200">{value && typeof value !== 'object' ? value : '-'}</span>
       }
     })),
     [columns, submissions]
